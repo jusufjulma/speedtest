@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+body {
+  /* background-color: #333; */
+  background-image: url(../images/bg.jpeg);
+  height: 50%;
+}
+
+.gamepad{
+    border: dashed 3px grey;
+    margin-top: 200px;
+    width: 1100px;
+    height: 300px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.container{
+  position: static;
+  border-radius: 50px;
+  background-color: #820202;
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  padding: 25px;
+  justify-content: space-around;
+}
+
+.circle{
+  align-self: center;
+  border: solid 5px #222;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin: 5px 5px 5px 5px;
+}
+
+#c1{
+  background-color: #0389ff;
+}
+#c2{
+  background-color:#fff203;
+}
+#c3{
+  background-color: #32c918;
+}
+#c4{
+  background-color: #b80202;
+}
+#activator{
+  position: relative;
+  top: -270px;
+  background-color: rgba(0, 255, 0, 0);
+  
+}
+
+.cBlank{
+  background: rgba(255, 0, 0, 0);
+}
+.cActive{
+  visibility: visible;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0.8) 33%,rgba(255,255,255,0) 100%);
+  border: solid 5px #111;
+}
+
+.start{
+
+
+}
+#startbutton{
+  display: block;
+  margin: auto;
+  font-size: 300%;
+  font-weight: bold;
+  margin-top: 100px;
+  background-color: #bb2040;
+  border: solid #701010 5px;
+}
