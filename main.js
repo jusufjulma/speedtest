@@ -1,7 +1,7 @@
 "use strict";
 
 document.getElementById('startbutton').onclick = start;
-document.getElementsByClassName('stop')[0].onclick = stop;
+// document.getElementsByClassName('stop')[0].onclick = stop;
 const c1 = document.getElementById('c1');
 const c2 = document.getElementById('c2');
 const c3 = document.getElementById('c3');
@@ -22,13 +22,13 @@ function start() {
 }
 
 function stop() {
-  console.log("Stopping...");
   clearTimeout(loop);
+  endScreen();
 }
 
 function targetFlash() {
   let flashMe = (Math.floor(Math.random()*4));      // this is just to clarify
-  targetArray.unshift(flashMe);                        // how it works; could be shorter
+  targetArray.push(flashMe);                        // how it works; could be shorter
   console.log(targetArray);
   blankCircles[flashMe].classList.add("cActive");
  if (delay < 300){
@@ -40,10 +40,6 @@ function targetFlash() {
 
 function removeFlash(x) {
   blankCircles[x].classList.remove("cActive");
-}
-
-function logger(x) {
-  console.log(x);
 }
 
 c1.addEventListener("mouseup", () => userPress(0))
@@ -61,16 +57,26 @@ function userPress(x) {
   }
 }
 
-
-
-
-
-
-
-function musicplayer(x) {
-  if (x == 1){
-    endscreen.play()
+function endScreen() {
+  let message;
+  document.getElementsByTagName('body')[0].style.overflow = "hidden";
+  if (score < 6) {
+    message = `Your final score was ${score}.
+    Are you proud of yourself now?`;
+    console.log(`Well, you scored ${score}. Congratulations.`);
+  }else if (score >= 6 && score < 20){
+    message = `You got ${score} clicks right... Well, it is not
+      exactly something to brag about.`
+  }else if (score >= 20 && score < 30){
+    message = `${score}, huh? Pretty good...`
+  }else if (score >= 30 && score < 50){
+    message = `${score}??? Wow. Maybe you should go and do something more
+    productive. Seriously.`
+  }else if (score >=50){
+    message = `GET OUT! With this amount of dedication I expect you to be
+    able to open console which might answer your question.`;
+    console.log(`Well, you scored ${score}. Congratulations.`);
   }
-  endscreen.play()
-  console.log("ASDASD");
+  document.getElementsByClassName("aftermath")[0].style.visibility = "visible";
+  document.getElementById("finalscore").innerHTML = message;
 }
