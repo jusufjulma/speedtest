@@ -1,10 +1,17 @@
 "use strict"
 
 document.getElementById('startbutton').onclick = start;
+document.getElementsByClassName('stop')[0].onclick = stop;
+const c1 = document.getElementById('c1');
+const c2 = document.getElementById('c2');
+const c3 = document.getElementById('c3');
+const c4 = document.getElementById('c4');
 
-let blankCircles = document.getElementsByClassName('cBlank');
+
+const blankCircles = document.getElementsByClassName('cBlank');
 let targetArray = [];
 let userArray = [];
+let loop;
 
 
 let delay = 1000;
@@ -12,8 +19,13 @@ let delay = 1000;
 function start() {
   console.log("LOOPATAAN " + delay);
   delay *= 0.98;
-  setTimeout(start, delay);
+  loop = setTimeout(start, delay);
   targetFlash();
+}
+
+function stop() {
+  console.log("Stopping...");
+  clearTimeout(loop)
 }
 
 function targetFlash() {
@@ -30,15 +42,17 @@ function targetFlash() {
 
 function removeFlash(x) {
   blankCircles[x].classList.remove("cActive");
-  console.log(delay);
 }
 
+function logger(x) {
+  console.log(x);
+}
 
-
-
+c1.addEventListener("mouseup", () => userPress(1))
+c2.addEventListener("mouseup", () => userPress(2))
+c3.addEventListener("mouseup", () => userPress(3))
+c4.addEventListener("mouseup", () => userPress(4))
 
 function userPress(x) {
-  if (x !== 1) {
-
-  }
+  console.log(x);
 }

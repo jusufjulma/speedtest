@@ -37,13 +37,14 @@ body {
   width: 200px;
   height: 200px;
   margin: 5px 5px 5px 5px;
+  box-shadow: #111 3px 15px 5px;
 }
 
 #c1{
   background-color: #0389ff;
 }
 #c2{
-  background-color:#fff203;
+  background-color:#bbbb03;
 }
 #c3{
   background-color: #32c918;
@@ -55,7 +56,7 @@ body {
   position: relative;
   top: -270px;
   background-color: rgba(0, 255, 0, 0);
-  
+
 }
 
 .cBlank{
@@ -63,7 +64,7 @@ body {
 }
 .cActive{
   visibility: visible;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0.8) 33%,rgba(255,255,255,0) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 25%,rgba(255,255,255,0) 100%);
   border: solid 5px #111;
 }
 
