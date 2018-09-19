@@ -6,12 +6,25 @@
     <link rel="stylesheet" href="css/master.css">
   </head>
   <body>
-    
+
+    <div class="hello">
+      <h1 id="hello" class="info">HELLO! Welcome to speed test game. Your objective is to click buttons as they flash.
+      Flash interval will gradually get shorter to give some challenge. <em>Start game by clicking the flashing "START" button.</em><br> <br> Click
+      here to close this window</h1>
+    </div>
+
     <div class="aftermath">
       <div class="info">
-        <h1>You made it this far.</h1>
+        <h1>MISCLICK!</h1>
         <h2 id="finalscore"></h2>
+        <button type="button" name="button" id="retrybutton">Retry!</button>
       </div>
+    </div>
+
+    <div class="header">
+      <p id="mute">Mute</p>
+      <p class="help">Help</p>
+      <!-- Help could have quick how to -section and maybe navigation -->
     </div>
 
 
@@ -50,5 +63,6 @@
     </div>
 
   </body>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="js/music.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </html>
