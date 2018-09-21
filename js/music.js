@@ -1,9 +1,12 @@
+"use strict";
+
 const intro = new Audio("music/intro.ogg");
 const mainloop = new Audio("music/mainloop.ogg");
 const gametime = new Audio("music/gametime.ogg");
 const maxspeed = new Audio("music/maxspeed.ogg");
 const endscreen = new Audio("music/endscreen.ogg");
 const songs = [intro, mainloop, gametime, maxspeed, endscreen];
+const beep = new Audio("music/beep2.ogg");
 let mutestate = 0;    // keeps track of mute situation
 
 const mutesound = document.getElementById("mute").onclick = muteSound;

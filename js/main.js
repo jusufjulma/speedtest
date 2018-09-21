@@ -5,18 +5,30 @@ const c1 = document.getElementById('c1');   // making html elements more
 const c2 = document.getElementById('c2');   // accessible
 const c3 = document.getElementById('c3');
 const c4 = document.getElementById('c4');
+const startbutton = document.getElementById('startbutton');
 
 const blankCircles = document.getElementsByClassName('cBlank');
 let targetArray = [];                   // logs flashed buttons sequence
 let score = 0;
 let loop;                               // stores setTimeout function call
 let delay = 1000;                       // how long between flashes
+let countdown = true;
 
 document.getElementById('retrybutton').onclick = () => window.location.reload(true);
-document.getElementById('startbutton').onclick = () =>{
-  start();
-  stopSound();
-  player(2);
+startbutton.onclick = () =>{
+  if (countdown) {
+    countdowner();
+    setTimeout( () => {
+      start();
+      stopSound();
+      player(2);
+    }, 1720); // end of setTimeout
+  }else{
+    start() ;
+    hideStart();
+    stopSound();
+    player(2);
+  }
 }
 
 function start() {
@@ -48,10 +60,10 @@ function removeFlash(x) {                           // removes active class
   blankCircles[x].classList.remove("cActive");      // a.k.a flash
 }
 
-c1.addEventListener("mouseup", () => userPress(0))  // handlers for actual
-c2.addEventListener("mouseup", () => userPress(1))  // user input
-c3.addEventListener("mouseup", () => userPress(2))
-c4.addEventListener("mouseup", () => userPress(3))
+c1.addEventListener("mousedown", () => userPress(0))  // handlers for actual
+c2.addEventListener("mousedown", () => userPress(1))  // user input
+c3.addEventListener("mousedown", () => userPress(2))
+c4.addEventListener("mousedown", () => userPress(3))
 
 function userPress(x) {             // deals with user input
   if (x !== targetArray[0]) {       // first we see if player fails
@@ -60,6 +72,7 @@ function userPress(x) {             // deals with user input
   targetArray.shift();              // otherwise correct value, which is first
   score++;                          // on array due to PUSH gets removed and
   document.getElementById("scorevalue").innerHTML = score;  // score gets updated
+  beep.play()
   }
 }
 
@@ -91,3 +104,31 @@ function endScreen() {              // pops up end screen
 
 // this game could have module to let user bind keys for buttons
 // also retry button functionality could be better
+
+function hideStart() {
+  startbutton.style.display = "none";
+}
+function countdowner() {
+  let i = 3;
+  messager();
+  function messager(){
+    console.log(i);
+    if (i === 0){
+      startbutton.innerHTML = `GO!`;
+      setTimeout(hideStart, 860)
+    }else{
+    startbutton.innerHTML = `${i}...`;
+    i--;
+    setTimeout(messager, 430)
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// EOF
