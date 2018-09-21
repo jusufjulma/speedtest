@@ -1,20 +1,27 @@
 "use strict";
 
+let keyValue1 = 68; // D
+let keyValue2 = 70; // F
+let keyValue3 = 74; // J
+let keyValue4 = 75; // K
+
+
+
 window.addEventListener("keydown", (pressed) => {
     switch (pressed.keyCode) {
-      case 68:
+      case keyValue1:
         console.log("Osu D!");
         userPress(0)
         break;
-      case 70:
+      case keyValue2:
         console.log("Osu F!");
         userPress(1)
         break;
-      case 74:
+      case keyValue3:
         console.log("Osu J!");
         userPress(2)
         break;
-      case 75:
+      case keyValue4:
         console.log("Osu K!");
         userPress(3)
         break;

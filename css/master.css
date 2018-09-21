@@ -26,12 +26,63 @@ body {
   padding: 0px 20px;
   /* border: solid red 2px; */
 }
-.options{
+#options-button{
   float: left;
+  cursor: pointer;
 }
 #mute{
   float: right;
   cursor: crosshair;
+}
+.options-container{
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(30, 30, 30, 1);
+  top: 0;
+  z-index: 12;
+}
+.options{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: double 15px black;
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  z-index: 10;
+  cursor: pointer;
+}
+#options-header{
+  margin-left: 200px;
+  margin-top: 50px;
+  text-decoration: underline;
+}
+.options table{
+  color: rgba(170, 180, 30, 1);
+  font-size: 120%;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.options td{
+  width: 200px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  /* border: red solid 1px; */
+}
+.table-value{
+  font-weight: bold;
+}
+#close-options{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 5px 10px;
+  outline: solid black 2px;
 }
 
 .scoreboard{
@@ -144,9 +195,9 @@ body {
 #startbutton:hover{
 
 }
-.hello{
-  visibility: visible;
-  visibility: hidden;
+.hello{                   /*rgba(180, 0, 00, 1)rgba(180, 0, 00, 1)rgba(180, 0, 00, 1)*/
+  visibility: visible;    /*rgba(180, 0, 00, 1) EDIT THIS!!! rgba(180, 0, 00, 1)*/
+  visibility: hidden;     /*rgba(180, 0, 00, 1)rgba(180, 0, 0, 1)rgba(180, 0, 00, 1)*/
   position: fixed;
   background-blend-mode: hue;
   /* background-color: rgba(10, 10, 10, 0.5); */

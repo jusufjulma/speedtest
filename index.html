@@ -23,9 +23,34 @@
 
     <div class="header">
       <p id="mute">Mute</p>
-      <p class="options">Options</p>
-      <!-- Help could have quick how to -section and maybe navigation -->
+      <p id="options-button">Options</p>
+      <!-- Options could have quick how to -section and maybe navigation -->
       <!-- Toggle keybindings -->
+    </div>
+
+    <div class="options-container">
+      <div class="options">
+        <h1 id="options-header"><em>Options</em></h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>Countdown before start</td>
+              <td class="table-value" id="countdown-state">On</td>
+            </tr>
+            <tr>
+              <td>Toggle keyboard mode</td>
+              <td class="table-value" id="keyboard-mode">On</td>
+            </tr>
+            <tr>
+              <td>Toggle mute</td>
+              <td class="table-value" id="mute-option">Off</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h1 id="close-options">Close options</h1>
+
+      </div>
     </div>
 
 
@@ -64,6 +89,7 @@
     </div>
 
   </body>
+  <script type="text/javascript" src="js/options.js"></script>
   <script type="text/javascript" src="js/keybind.js"></script>
   <script type="text/javascript" src="js/music.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
