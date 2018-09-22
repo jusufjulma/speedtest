@@ -15,13 +15,16 @@ function muteSound() {
   if (mutestate === 0) {
     for (let i = 0; i < songs.length; i++) {  // mutes every sound
       songs[i].volume = 0;
+      muteOption.innerHTML = "On";
     }
     mutestate++;                // updates muted situation
   }else if (mutestate === 1) {
     for (let i = 0; i < songs.length; i++) {
       songs[i].volume = 1;
+      muteOption.innerHTML = "Off";
     }
     mutestate--;                // updates muted situation
+    intro.volume = 0.5;
   }
 }
 
@@ -35,13 +38,14 @@ enter.addEventListener("mouseup", () => player(0))  // handlers for actual
 function player(x) {                    // this function handles audio requests
   if (x === 0 && introcheck === 0) {    // HINGEROOOOOOOOSTAS
     intro.play();
+    intro.volume = 0.5;
     introcheck++                        // intro has been played
     setTimeout(() => player(1), 6850)   // and now moving to menu music
     enter.style.visibility = "hidden";
   }else if (x === 1 && stopcheck === 0) {   // which will not play if player
     mainloop.loop = true;                   // started already. Otherwise loops
     mainloop.play();
-  }else if (x === 2) {                      // gametime!
+  }else if (x === 2) {   // gametime!
     gametime.play()
   }else if (x === 3) {                      // you win/lose
     endscreen.play()
@@ -54,3 +58,8 @@ function stopSound() {                      // every switch needs this
     songs[i].pause();
   }
 }
+
+
+
+
+// EOF

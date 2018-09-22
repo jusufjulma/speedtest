@@ -4,7 +4,7 @@ const optionButton = document.getElementById("options-button");
 const optionWindow = document.getElementsByClassName('options-container')[0];
 const optionsClose = document.getElementById('close-options');
 const countdownState = document.getElementById("countdown-state");
-const keyboardMode = [document.getElementById("keyboard-mode"), 1];
+const keyboardMode = [document.getElementById("keyboard-mode"), 0];
 const muteOption = document.getElementById("mute-option");
 
 const keyCharacters = document.getElementsByClassName("key");
@@ -36,5 +36,15 @@ keyboardMode[0].addEventListener("mousedown", () =>{
     }
     keyboardMode[0].innerHTML = "On";
     keyboardMode[1] = 1;
+  }
+});
+
+muteOption.addEventListener("mousedown", () =>{
+  if (mutestate === 0) {
+    muteSound();
+    muteOption.innerHTML = "On"
+  }else{
+    muteSound();
+    muteOption.innerHTML = "Off"
   }
 });

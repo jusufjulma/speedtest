@@ -12,13 +12,14 @@ let targetArray = [];                   // logs flashed buttons sequence
 let score = 0;
 let loop;                               // stores setTimeout function call
 let delay = 1000;                       // how long between flashes
-let countdown = true;
+let countdown = false;
+let failcheck;                          // to fix if user is failing instantly
 
 document.getElementById('retrybutton').onclick = () => window.location.reload(true);
 startbutton.onclick = () =>{
   if (countdown) {
     countdowner();
-    setTimeout( () => {
+    failcheck = setTimeout( () => {
       start();
       stopSound();
       player(2);
@@ -39,6 +40,7 @@ function start() {
 
 function stop() {                       // stops game
   clearTimeout(loop);
+  clearTimeout(failcheck);              // if user clicks before light has flashed
   stopSound();                          // stops music
   endScreen();                          // pops endscreen
   player(3);                            // ...and plays endscreen music
@@ -100,6 +102,7 @@ function endScreen() {              // pops up end screen
   }
   document.getElementsByClassName("aftermath")[0].style.visibility = "visible";
   document.getElementById("finalscore").innerHTML = message; // CSS commands
+  gametime.volume = 0;
 }
 
 // this game could have module to let user bind keys for buttons
@@ -112,7 +115,6 @@ function countdowner() {
   let i = 3;
   messager();
   function messager(){
-    console.log(i);
     if (i === 0){
       startbutton.innerHTML = `GO!`;
       setTimeout(hideStart, 860)

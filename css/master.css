@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0 0 0 0;
+  user-select: none;
 }
 
 body {
@@ -100,6 +101,7 @@ body {
 }
 #scorevalue{
   width: 100px;
+  user-select: all;
 }
 
 .gamepad{
@@ -123,6 +125,7 @@ body {
 }
 
 .key{
+  display: none;
   font-size: 300%;
   font-weight: bold;
   position: relative;
@@ -195,9 +198,9 @@ body {
 #startbutton:hover{
 
 }
-.hello{                   /*rgba(180, 0, 00, 1)rgba(180, 0, 00, 1)rgba(180, 0, 00, 1)*/
-  visibility: visible;    /*rgba(180, 0, 00, 1) EDIT THIS!!! rgba(180, 0, 00, 1)*/
-  visibility: hidden;     /*rgba(180, 0, 00, 1)rgba(180, 0, 0, 1)rgba(180, 0, 00, 1)*/
+.hello{
+  visibility: visible;
+  /* visibility: hidden;      */
   position: fixed;
   background-blend-mode: hue;
   /* background-color: rgba(10, 10, 10, 0.5); */
