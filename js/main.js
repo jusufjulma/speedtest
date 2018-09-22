@@ -6,16 +6,18 @@ const c2 = document.getElementById('c2');   // accessible
 const c3 = document.getElementById('c3');
 const c4 = document.getElementById('c4');
 const startbutton = document.getElementById('startbutton');
+document.getElementById('retrybutton').onclick = retry;
 
 const blankCircles = document.getElementsByClassName('cBlank');
 let targetArray = [];                   // logs flashed buttons sequence
 let score = 0;
+let highscore = 0;
+let gamesPlayed = 0;
 let loop;                               // stores setTimeout function call
 let delay = 1000;                       // how long between flashes
 let countdown = false;
 let failcheck;                          // to fix if user is failing instantly
 
-document.getElementById('retrybutton').onclick = () => window.location.reload(true);
 startbutton.onclick = () =>{
   if (countdown) {
     countdowner();
@@ -83,7 +85,7 @@ function endScreen() {              // pops up end screen
   document.getElementsByTagName('body')[0].style.overflow = "hidden";
   if (score === 0){
     message = `Were the instructions unclear?`
-  }else if (score < 6) {                  // which are progressively more cheerful
+  }else if (score < 6) {            // which are progressively more cheerful
     message = `Your final score was ${score}.
     Are you proud of yourself now?`;
     console.log(`Well, you scored ${score}. Congratulations.`);
@@ -102,7 +104,12 @@ function endScreen() {              // pops up end screen
   }
   document.getElementsByClassName("aftermath")[0].style.visibility = "visible";
   document.getElementById("finalscore").innerHTML = message; // CSS commands
-  gametime.volume = 0;
+  if (score > highscore){                                    // updates high score
+    highscore = score;
+    document.getElementById("high-score").innerHTML = highscore;
+  }
+  gamesPlayed++;
+  document.getElementById("games-played").innerHTML = gamesPlayed;
 }
 
 // this game could have module to let user bind keys for buttons
@@ -126,9 +133,26 @@ function countdowner() {
   }
 }
 
+function retry() {
+  console.log("Retry!");
+  document.getElementsByClassName("aftermath")[0].style.visibility = "hidden";
+  stopSound();
+  startbutton.style.display = "initial";
+  targetArray = [];
+  score = 0;
+  document.getElementById("scorevalue").innerHTML = score;  // score gets updated
+  stopcheck = 0;
+  player(1);
 
+}
 
-
+// function stop() {                       // stops game
+//   clearTimeout(loop);
+//   clearTimeout(failcheck);              // if user clicks before light has flashed
+//   stopSound();                          // stops music
+//   endScreen();                          // pops endscreen
+//   player(3);                            // ...and plays endscreen music
+// }
 
 
 

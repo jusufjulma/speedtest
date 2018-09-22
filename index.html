@@ -8,9 +8,11 @@
   <body>
 
     <div class="hello">
-      <h1 id="hello" class="info">HELLO! Welcome to speed test game. Your objective is to click buttons as they flash.
-      Flash interval will gradually get shorter to give some challenge. <em>Start game by clicking the flashing "START" button.</em><br> <br> Click
-      here to close this window</h1>
+      <div class="info">
+        <h1 id="hello">HELLO! Welcome to my speed test game. Your objective is to click buttons as they flash.
+          Flash interval will gradually get shorter to give some challenge. <em>Start game by clicking the flashing "START" button.</em></h1>
+          <h1>Click here to close this window</h1>
+      </div>
     </div>
 
     <div class="aftermath">
@@ -29,44 +31,6 @@
       <!-- Tell session stats (high score, how many plays) -->
     </div>
 
-    <div class="options-container">
-      <div class="options">
-        <h1 id="options-header"><em>Options</em></h1>
-        <table>
-          <tbody>
-            <tr>
-              <td>Countdown before start</td>
-              <td class="table-value" id="countdown-state">Off</td>
-            </tr>
-            <tr>
-              <td>Toggle keyboard mode</td>
-              <td class="table-value" id="keyboard-mode">Off</td>
-            </tr>
-            <tr>
-              <td>Toggle mute</td>
-              <td class="table-value" id="mute-option">Off</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table>
-          <thead>
-            <h1>Statistics</h1>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Countdown before start</td>
-              <td class="table-value" id="countdown-state">Off</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h1 id="close-options">Close options</h1>
-
-      </div>
-    </div>
-
-
     <div class="scoreboard">
       <table>
         <tbody>
@@ -76,6 +40,50 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="options-container">
+      <div class="options">
+        <table>
+          <thead>
+            <h1 class="options-header"><em>Options</em></h1>
+            <h3 class="options-helper">(Click "Off" to switch)</h3>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-desc">Countdown before start</td>
+              <td class="table-value" id="countdown-state">Off</td>
+            </tr>
+            <tr>
+              <td class="table-desc">Toggle keyboard mode</td>
+              <td class="table-value" id="keyboard-mode">Off</td>
+            </tr>
+            <tr>
+              <td class="table-desc">Toggle mute</td>
+              <td class="table-value" id="mute-option">Off</td>
+            </tr>
+          </tbody>
+        </table>
+    <!-- TABLE SEPARATOR COMMENT -->
+        <table>
+          <thead>
+            <h1 class="options-header"><em>Statistics</em></h1>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-desc">High score:</td>
+              <td class="table-value" id="high-score">0</td>
+            </tr>
+            <tr>
+              <td class="table-desc">Games played:</td>
+              <td class="table-value" id="games-played">0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h1 id="close-options">Close options</h1>
+
+      </div>
     </div>
 
     <div class="gamepad">

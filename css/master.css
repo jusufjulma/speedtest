@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+/* font-family: 'Mukta', sans-serif; */
+
 html, body {
   height: 100%;
   width: 100%;
   margin: 0 0 0 0;
   user-select: none;
+  font-family: 'Mukta', sans-serif;
 }
 
 body {
@@ -11,21 +15,43 @@ body {
   height: 50%;
 }
 
+button{
+  font-family: 'Mukta', sans-serif;
+}
+
 .header{
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
   position: fixed;
   top: 0;
   width: 100%;
-  height: 50px;
-  z-index: 11;
+  height: 150px;
+  z-index: 0;
 }
 .header p{
   position: relative;
   color: white;
-  font-size: 200%;
+  font-size: 400%;
   top: -25px;
-  padding: 0px 20px;
+  padding: 0px 50px;
   /* border: solid red 2px; */
+}
+.scoreboard{
+  color: white;
+  font-size: 300%;
+  position: relative;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: center;
+  width: 300px;
+  padding-left: 50px;
+  border: solid 5px white;
+  border-radius: 25px;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+}
+#scorevalue{
+  width: 100px;
+  user-select: all;
 }
 #options-button{
   float: left;
@@ -57,18 +83,25 @@ body {
   z-index: 10;
   cursor: pointer;
 }
-#options-header{
+.options-header{
   margin-left: 200px;
   margin-top: 50px;
   text-decoration: underline;
+}
+.options-helper{
+  margin-left: 100px;
+  position: absolute;
+  transform: translateY(-80%);
+  color: #111;
 }
 .options table{
   color: rgba(170, 180, 30, 1);
   font-size: 120%;
   margin-left: 100px;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
-.options td{
+.table-desc{
   width: 200px;
   padding-right: 30px;
   padding-bottom: 10px;
@@ -76,32 +109,21 @@ body {
 }
 .table-value{
   font-weight: bold;
+  width: 30px;
+  text-align: right;
 }
+.table-value:hover{
+  text-shadow: 2px 3px 3px #000;
+  color: rgba(210, 220, 70, 1);
+}
+
 #close-options{
   position: fixed;
-  bottom: 0;
+  bottom: 30px;
   left: 50%;
   transform: translate(-50%, 0%);
   padding: 5px 10px;
-  outline: solid black 2px;
-}
-
-.scoreboard{
-  color: white;
-  font-size: 300%;
-  position: relative;
-  margin: auto;
-  margin-top: 75px;
-  text-align: center;
-  width: 300px;
-  padding-left: 50px;
-  border: solid 5px white;
-  border-radius: 25px;
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
-}
-#scorevalue{
-  width: 100px;
-  user-select: all;
+  outline: double 5px black;
 }
 
 .gamepad{
@@ -196,14 +218,17 @@ body {
   min-width: 150px;
 }
 #startbutton:hover{
-
+  font-size: 310%;
 }
+#startbutton:active{
+  position: relative;
+  top: 3px;
+  outline: none;
+}
+
 .hello{
   visibility: visible;
-  /* visibility: hidden;      */
   position: fixed;
-  background-blend-mode: hue;
-  /* background-color: rgba(10, 10, 10, 0.5); */
   background: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%,rgba(0,0,0,0.5) 100%);
   background-position: center;
   width: 100%;
@@ -213,8 +238,7 @@ body {
   cursor: pointer;
 }
 #hello{
-  background-color: rgba(255, 255, 255, 0.8);
-  animation: pulsatingWhite 1s linear 0s infinite alternate;
+  text-align: justify;
 }
 
 .aftermath{
@@ -232,11 +256,13 @@ body {
   text-align: center;
   margin: auto;
   margin-top: 15%;
-  padding: 25px 25px 25px 25px;
+  padding: 10px 40px;
   color: black;
   width: 600px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: pulsatingWhite 1s linear 0s infinite alternate;
 }
 
 #retrybutton{

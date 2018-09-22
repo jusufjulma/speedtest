@@ -33,7 +33,7 @@ let stopcheck = 0;              // tells if stopSound has been triggered
 let mousemoves = 0;
 
 const enter = document.getElementsByClassName('hello')[0];
-enter.addEventListener("mouseup", () => player(0))  // handlers for actual
+enter.addEventListener("mousedown", () => player(0))  // handlers for actual
 
 function player(x) {                    // this function handles audio requests
   if (x === 0 && introcheck === 0) {    // HINGEROOOOOOOOSTAS
@@ -56,6 +56,7 @@ function stopSound() {                      // every switch needs this
   stopcheck++;                              // informs that menumusic is obsolete
   for (let i = 0; i < songs.length; i++) {  // pauses every audio
     songs[i].pause();
+    songs[i].currentTime = 0;
   }
 }
 

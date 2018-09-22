@@ -6,34 +6,36 @@ let keyValue3 = 74; // J
 let keyValue4 = 75; // K
 
 
-
 window.addEventListener("keydown", (pressed) => {
+  if (keyboardMode[1] === 1) {
+
     switch (pressed.keyCode) {
       case keyValue1:
-        console.log("Osu D!");
+        pressed.preventDefault();
         userPress(0)
         break;
       case keyValue2:
-        console.log("Osu F!");
+        pressed.preventDefault();
         userPress(1)
         break;
       case keyValue3:
-        console.log("Osu J!");
+        pressed.preventDefault();
         userPress(2)
         break;
       case keyValue4:
-        console.log("Osu K!");
+        pressed.preventDefault();
         userPress(3)
         break;
       case 77:
-        console.log("Osu M!");
+        pressed.preventDefault();
         muteSound()
         break;
-      default: console.log("Missed :---D");
+      // default: console.log("Missed :---D");
     }
     if (pressed.ctrlKey && pressed.keyCode == 107) {
       pressed.preventDefault();
       console.log("CHEATS ACTIVATED!");
       score++
     }
+  }
 })
