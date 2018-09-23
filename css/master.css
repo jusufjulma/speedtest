@@ -64,7 +64,7 @@ button{
 .options-background{
   /* rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) */
   /* rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) */
-  /* display: none; */
+  display: none;
   height: 100%;
   width: 100%;
   position: fixed;
