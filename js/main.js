@@ -142,17 +142,12 @@ function retry() {
   score = 0;
   document.getElementById("scorevalue").innerHTML = score;  // score gets updated
   stopcheck = 0;
+  delay = 1000;
   player(1);
 
 }
 
-// function stop() {                       // stops game
-//   clearTimeout(loop);
-//   clearTimeout(failcheck);              // if user clicks before light has flashed
-//   stopSound();                          // stops music
-//   endScreen();                          // pops endscreen
-//   player(3);                            // ...and plays endscreen music
-// }
+
 
 
 
