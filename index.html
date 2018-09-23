@@ -42,46 +42,80 @@
       </table>
     </div>
 
-    <div class="options-container">
-      <div class="options">
-        <table>
-          <thead>
-            <h1 class="options-header"><em>Options</em></h1>
-            <h3 class="options-helper">(Click "Off" to switch)</h3>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="table-desc">Countdown before start</td>
-              <td class="table-value" id="countdown-state">Off</td>
-            </tr>
-            <tr>
-              <td class="table-desc">Toggle keyboard mode</td>
-              <td class="table-value" id="keyboard-mode">Off</td>
-            </tr>
-            <tr>
-              <td class="table-desc">Toggle mute</td>
-              <td class="table-value" id="mute-option">Off</td>
-            </tr>
-          </tbody>
-        </table>
-    <!-- TABLE SEPARATOR COMMENT -->
-        <table>
-          <thead>
-            <h1 class="options-header"><em>Statistics</em></h1>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="table-desc">High score:</td>
-              <td class="table-value" id="high-score">0</td>
-            </tr>
-            <tr>
-              <td class="table-desc">Games played:</td>
-              <td class="table-value" id="games-played">0</td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="options-background">
+      <div class="options-container">
 
-        <h1 id="close-options">Close options</h1>
+        <div class="options">
+          <table>
+            <thead>
+              <h1 class="options-header"><em>Options</em></h1>
+              <h3 class="options-helper">(Click "Off" to switch)</h3>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-desc">Countdown before start</td>
+                <td class="table-value" id="countdown-state">Off</td>
+              </tr>
+              <tr>
+                <td class="table-desc">Toggle keyboard mode</td>
+                <td class="table-value" id="keyboard-mode">Off</td>
+              </tr>
+              <tr>
+                <td class="table-desc">Toggle mute</td>
+                <td class="table-value" id="mute-option">Off</td>
+              </tr>
+            </tbody>
+          </table>
+      <!-- TABLE SEPARATOR COMMENT -->
+          <table>
+            <thead>
+              <h1 class="options-header"><em>Statistics</em></h1>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-desc">High score:</td>
+                <td class="table-value-stats" id="high-score">0</td>
+              </tr>
+              <tr>
+                <td class="table-desc">Games played:</td>
+                <td class="table-value-stats" id="games-played">0</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h1 id="close-options">Close options</h1>
+
+        </div>
+
+        <div id="separator-line"></div>
+
+        <div class="keybinding-container">
+          <h1 class="keybindings-header"><em>Custom keybindings</em></h1>
+          <p id="keybindings-info">Here you can assign custom keys for playing.<br>
+          Click letter to assign.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td class="table-desc">Button 1:</td>
+                <td class="table-value" id="customkey-1">D</td>
+              </tr>
+              <tr>
+                <td class="table-desc">Button 2:</td>
+                <td class="table-value" id="customkey-2">F</td>
+              </tr>
+              <tr>
+                <td class="table-desc">Button 3:</td>
+                <td class="table-value" id="customkey-3">J</td>
+              </tr>
+              <tr>
+                <td class="table-desc">Button 4:</td>
+                <td class="table-value" id="customkey-4">K</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <h3 class="bindings-helper">(Assigning same value for multiple keys is not recommended.)</h3>
+        </div>
 
       </div>
     </div>

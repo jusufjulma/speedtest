@@ -1,7 +1,7 @@
 "use strict";
 
 const optionButton = document.getElementById("options-button");
-const optionWindow = document.getElementsByClassName('options-container')[0];
+const optionWindow = document.getElementsByClassName('options-background')[0];
 const optionsClose = document.getElementById('close-options');
 const countdownState = document.getElementById("countdown-state");
 const keyboardMode = [document.getElementById("keyboard-mode"), 0];

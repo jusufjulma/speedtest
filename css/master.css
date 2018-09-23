@@ -61,8 +61,10 @@ button{
   float: right;
   cursor: crosshair;
 }
-.options-container{
-  display: none;
+.options-background{
+  /* rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) */
+  /* rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) rgb(255, 0, 2) */
+  /* display: none; */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -70,7 +72,7 @@ button{
   top: 0;
   z-index: 12;
 }
-.options{
+.options-container{
   position: fixed;
   left: 50%;
   top: 50%;
@@ -81,7 +83,11 @@ button{
   height: 80%;
   margin: auto;
   z-index: 10;
-  cursor: pointer;
+}
+.options{
+  float: left;
+  width: 50%;
+  height: 100%;
 }
 .options-header{
   margin-left: 200px;
@@ -94,7 +100,7 @@ button{
   transform: translateY(-80%);
   color: #111;
 }
-.options table{
+.options-container table{
   color: rgba(170, 180, 30, 1);
   font-size: 120%;
   margin-left: 100px;
@@ -111,12 +117,48 @@ button{
   font-weight: bold;
   width: 30px;
   text-align: right;
+  cursor: pointer;
+}
+.table-value-stats{
+  font-weight: bold;
+  width: 30px;
+  text-align: right;
 }
 .table-value:hover{
   text-shadow: 2px 3px 3px #000;
   color: rgba(210, 220, 70, 1);
 }
-
+#separator-line{
+  float: left;
+  position: absolute;
+  margin-left: 50%;
+  width: 3px;
+  height: 70%;
+  background-color: #151515;
+  transform: translateY(10%);
+}
+.keybinding-container{
+  float: right;
+  width: 50%;
+  height: 100%;
+}
+.keybindings-header{
+  text-align: center;
+  margin-top: 50px;
+  text-decoration: underline;
+}
+#keybindings-info{
+  color: rgba(170, 180, 30, 1);
+  font-size: 120%;
+  margin-left: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.bindings-helper{
+  margin-left: 100px;
+  width: 300px;
+  color: #111;
+}
 #close-options{
   position: fixed;
   bottom: 30px;
@@ -151,7 +193,7 @@ button{
   font-size: 300%;
   font-weight: bold;
   position: relative;
-  top: 70px;
+  top: 60px;
   --shadow-color: rgba(200, 200, 200, 0.2);
   text-shadow: 3px 2px 3px var(--shadow-color), -3px -2px 3px var(--shadow-color),
   -3px 2px 3px var(--shadow-color), 3px -2px 3px var(--shadow-color);
