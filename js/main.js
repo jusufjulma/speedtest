@@ -1,6 +1,5 @@
 "use strict";
 
-// document.getElementsByClassName('stop')[0].onclick = stop;
 const c1 = document.getElementById('c1');   // making html elements more
 const c2 = document.getElementById('c2');   // accessible
 const c3 = document.getElementById('c3');
@@ -17,6 +16,15 @@ let loop;                               // stores setTimeout function call
 let delay = 1000;                       // how long between flashes
 let countdown = false;
 let failcheck;                          // to fix if user is failing instantly
+let cookiesAllowed = false;
+
+const enter = document.getElementsByClassName('hello')[0];
+enter.addEventListener("mousedown", () => {
+  player(0);
+  cookieReader();
+  enter.style.visibility = "hidden";
+})
+
 
 startbutton.onclick = () =>{
   if (countdown) {
@@ -87,17 +95,17 @@ function endScreen() {              // pops up end screen
     message = `Were the instructions unclear?`
   }else if (score < 6) {            // which are progressively more cheerful
     message = `Your final score was ${score}.
-    Are you proud of yourself now?`;
+    Are you proud of yourself?`;
     console.log(`Well, you scored ${score}. Congratulations.`);
   }else if (score >= 6 && score < 20){
     message = `You got ${score} clicks right... Well, it is not
       exactly something to brag about.`
   }else if (score >= 20 && score < 30){
     message = `${score}, huh? Pretty good...`
-  }else if (score >= 30 && score < 50){
+  }else if (score >= 30 && score < 60){
     message = `${score}??? Wow. Maybe you should go and do something more
     productive. Seriously.`         // or not
-  }else if (score >=50){
+  }else if (score >=60){
     message = `GET OUT!<br>With that amount of dedication I expect you to be
     able to open console which might answer your question.`;
     console.log(`Well, you scored ${score}. Congratulations.`);
@@ -110,6 +118,7 @@ function endScreen() {              // pops up end screen
   }
   gamesPlayed++;
   document.getElementById("games-played").innerHTML = gamesPlayed;
+  cookieWriter();
 }
 
 // this game could have module to let user bind keys for buttons
@@ -134,7 +143,6 @@ function countdowner() {
 }
 
 function retry() {
-  console.log("Retry!");
   document.getElementsByClassName("aftermath")[0].style.visibility = "hidden";
   stopSound();
   startbutton.style.display = "initial";
@@ -144,7 +152,6 @@ function retry() {
   stopcheck = 0;
   delay = 1000;
   player(1);
-
 }
 
 

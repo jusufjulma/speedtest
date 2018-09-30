@@ -17,6 +17,7 @@ body {
 
 button{
   font-family: 'Mukta', sans-serif;
+  color: #000;
 }
 
 .header{
@@ -128,6 +129,41 @@ button{
   text-shadow: 2px 3px 3px #000;
   color: rgba(210, 220, 70, 1);
 }
+.cookie-popup{
+  display: none;
+  position: absolute;
+  width: 500px;
+  margin-left: 50%;
+  margin-top: 0%;
+  transform: translate(-50%, -50%);
+  background-color: #444;
+  outline: double 5px rgba(170, 180, 30, 1);
+  z-index: 20;
+}
+.cookie-popup h1{
+  text-align: center;
+  text-decoration: underline;
+}
+.cookie-popup p{
+  text-align: justify;
+  padding: 0px 20px;
+  margin-bottom: 30px;
+}
+#no-cookies{
+  color: red;
+  font-weight: bold;
+  font-size: 100%;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+#yes-cookies{
+  color: green;
+  font-weight: bold;
+  font-size: 100%;
+  float: right;
+  margin-right: 20px;
+}
 #separator-line{
   float: left;
   position: absolute;
@@ -156,7 +192,7 @@ button{
 }
 .bindings-helper{
   margin-left: 100px;
-  width: 300px;
+  width: 350px;
   color: #111;
 }
 #close-options{
@@ -165,7 +201,8 @@ button{
   left: 50%;
   transform: translate(-50%, 0%);
   padding: 5px 10px;
-  outline: double 5px black;
+  outline: double 5px #000;
+  cursor: pointer;
 }
 
 .gamepad{
